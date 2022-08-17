@@ -3,10 +3,10 @@
 
 
 
-const cube = memo('duce',()=>document.querySelector('#cube'));
+const cube = document.querySelector('#cube')
 
 
-gsap.to(memo('duce'),{duration:2,rotationX:1500,rotationY:-1500})
+gsap.to(cube,{duration:2,rotationX:1500,rotationY:-1500})
 
 const diceAnimation = function() {
  
@@ -18,7 +18,7 @@ const diceAnimation = function() {
 
 
   function complete(){
-    memo('duce').dataset.dice = random + 1;
+    cube.dataset.dice = random + 1;
 
   }
 
@@ -31,7 +31,7 @@ const diceAnimation = function() {
     [-180,0], // 6
   ]
 
-  gsap.to(memo('duce'),{ease:'linear',duration:0.1,z:-100,rotationX:rotationValue[random][0],rotationY:rotationValue[random][1],onComplete:complete})
+  gsap.to(cube,{ease:'linear',duration:0.1,z:-100,rotationX:rotationValue[random][0],rotationY:rotationValue[random][1],onComplete:complete})
 
   // diceNumber == 6 ? 1 : diceNumber++;
 
